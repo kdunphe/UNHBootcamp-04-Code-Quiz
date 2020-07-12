@@ -1,0 +1,40 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    background-color: lightgray;
+    text-align: center;
+    margin: 50px;
+    padding: 150px;
+}
+
+h1 {
+    color: lightseagreen;
+}
+
+button {
+    border: none;
+    background-color: lightseagreen;
+    border-radius: 25px;
+    color: white;
+    display: inline-block;
+    font-size: 22px;
+    line-height: 22px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: lightseagreen;
+}
+
+@media (max-width: 690px) {
+    body {
+      padding: 50px 15px;
+    }
+  
+  @media (max-width: 500px) {
+
+  }}
