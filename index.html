@@ -1,22 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css" />
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <header><h1>Coding Quiz Challenge</h1></header>
+    <header>
+        <div class="row">
+            <div class="col-6">
+                <p>View Highscores</p>
+            </div>
+
+            <div class="col-6 d-flex justify-content-end">
+                <p>Time:&nbsp;</p>
+                <p class="timer">60 seconds</p>
+            </div>
+        </div>
+    </header>
+
     <br />
+
     <main>
-        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by ten seconds!</p>
-        <br />
-        <button>Start Quiz!</button>
+        <section>
+            <h1>Coding Quiz Challenge</h1>
+            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
+                answers
+                will penalize your scoretime by ten seconds!</p>
+            <br />
+            <button id="start">Start Quiz!</button>
+        </section>
+
+        <!-- Quiz Section  -->
+        <section id="startquiz">
+            <p id="question"></p>
+            <button id="1"></button>
+            <button id="2"></button>
+            <button id="3"></button>
+            <button id="4"></button>
+            <p id="answer"></p>
+        </section>
+
+
+        <!-- Quiz Complete Section -->
+        <section id="endquiz">
+            <p id="complete">All done!</p>
+            <p id="finalscore"></p>
+            <p id="initials">Enter Your Initials</p>
+            <button id="submit">Submit</button>
+        </section>
+
     </main>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>

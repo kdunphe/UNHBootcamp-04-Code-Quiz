@@ -56,3 +56,8 @@
 // All done!
 // Your final score is: _________  [return score]
 // Enter Initials: [text box] with [submit button]
+
+
+function startQuiz() {
+    
+}
