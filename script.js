@@ -58,6 +58,25 @@
 // Enter Initials: [text box] with [submit button]
 
 
+
+
+// Countdown Timer
+var counter = 60;
+var interval = setInterval(function() {
+    counter--;
+    // Display 'counter' wherever you want to display it.
+    if (counter <= 0) {
+     	clearInterval(interval);
+      	$("#timer").html("Times up!");  
+        return;
+    } else {
+    	$("#time").text(counter);
+    }
+}, 1000);
+
+
 function startQuiz() {
-    
+
+
+
 }
