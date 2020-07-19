@@ -18,41 +18,7 @@
 // Buttons [go back] & [clear scores]
 // When [clear scores] selected, clear scores from page
 // When [go back] selected, return to main page (coding quiz challenge)
-
-
-
-// Quiz Questions - JS or part of HTML?
-// Commonly used data types DO NOT include:
-// 1. Strings
-// 2. Booleans
-// 3. Alerts - correct answer
-// 4. Numbers
-
-// The condition in an if / else statement is enclosed within ______.
-// 1. Quotes
-// 2. Curly Brackets
-// 3. Parentheses - correct answer
-// 4. Square Brackets
-
-// Arrays in JavaScript can be used to store ______.
-// 1. Numbers & Strings
-// 2. Other Arrays
-// 3. Booleans
-// 4. All of the above - correct answer
-
-// String values must be enclosed within _______ when being assigned to variables.
-// 1. Commas
-// 2. Curly Brackets
-// 3. Quotes - correct answer
-// 4. Parentheses
-
-// A very useful tool used during development and debugging for printing content to the debugger is:
-// 1. JavaScript
-// 2. Terminal / Bash
-// 3. For Loops
-// 4. Console Log - correct answer
-
-
+// Array of quiz questions
 // All done!
 // Your final score is: _________  [return score]
 // Enter Initials: [text box] with [submit button]
@@ -112,30 +78,24 @@ let questions = [
 
 let start = document.querySelector("#start");
 let counter = 60;
-let timer;
+let timerDisplay = document.querySelector("#timer");
+let question = document.querySelector("#startquiz");
+let questionCount = 0;
+let choice1 = document.querySelector("#choice1");
+let choice2 = document.querySelector("#choice2");
+let choice3 = document.querySelector("#choice3");
+let choice4 = document.querySelector("#choice4");
 
 
-        // // Countdown Timer
-        // var counter = 60;
-        // var interval = setInterval(function () {
-        //     counter--;
-        //     if (counter <= 0) {
-        //         clearInterval(interval);
-        //         $("#timer").html("Times up!");
-        //         return;
-        //     } else {
-        //         $("#time").text(counter);
-        //     }
-        // }, 1000);
 
+// Start Timer when Start Quiz is Clicked
+function countDown() {
 
-function startQuiz() {
-
-    $("#start").on("click", function () {
         // Countdown Timer
         timer = setInterval(function () {
             counter--;
-            $("#time").text(counter);
+            timerDisplay.textContent = counter;
+            // $("#time").text(counter);
             if (counter <= 0) {
                 clearInterval(timer);
                 $("#timer").html("Times up!");
@@ -143,10 +103,27 @@ function startQuiz() {
             } 
         }, 1000);
         startQuiz();
+        displayQuestions();
+}
 
-    }
+// Hide Intro and Show Quiz when Start Quiz is Clicked
+function startQuiz() {
+    // $("#intro").style.display = "none";
+    document.querySelector("#intro").style.display = "none";
+    document.querySelector("#startquiz").style.display = "block";
+    // displayQuestions(questionCount);
+}
+
+// function displayQuestions() {
+//     q = questions[questionCount];
+//     questions.textContext = q.question;
+//     choice1.textContent = q.choice1; 
+// }
 
 
 
 
-    )}
+    // Event Listeners
+start.addEventListener("click", countDown);
+question.addEventListener("click", startQuiz);
+
