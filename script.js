@@ -86,6 +86,10 @@ let choice1 = document.querySelector("#choice1");
 let choice2 = document.querySelector("#choice2");
 let choice3 = document.querySelector("#choice3");
 let choice4 = document.querySelector("#choice4");
+let answerBtn = document.querySelector("#buttons");
+let answer = document.querySelector("#answer");
+let finalscore = document.querySelector("#finalscore");
+let currentQuestion = questions[questionCount];
 
 
 
@@ -112,7 +116,6 @@ function startQuiz() {
     // $("#intro").style.display = "none";
     document.querySelector("#intro").style.display = "none";
     document.querySelector("#startquiz").style.display = "block";
-    // displayQuestions(questionCount);
 }
 
 
@@ -124,8 +127,29 @@ function displayQuestions() {
     choice2.textContent = currentQuestion.choice2; 
     choice3.textContent = currentQuestion.choice3; 
     choice4.textContent = currentQuestion.choice4; 
-
 }
+
+// Validate Correct Answer
+// Source: https://stackoverflow.com/questions/40835372/targeting-multiple-choice-questions
+// function validateAnswer(answer) {
+//     if (questions[questionCount].correct == answer) {
+//         alert("Correct!");
+//     }
+// }
+
+
+function selectedAnswer(button) {
+    if (button.target.id === "1") {
+      clickedAnswer = 1;
+    } else if (button.target.id === "2") {
+      clickedAnswer = 2;
+    } else if (button.target.id === "3") {
+      clickedAnswer = 3;
+    } else {
+      clickedAnswer = 4;
+    }
+    validateAnswer();
+  }
 
 
 
@@ -133,4 +157,5 @@ function displayQuestions() {
     // Event Listeners
 start.addEventListener("click", countDown);
 question.addEventListener("click", startQuiz);
+// answerBtn.addEventListener("click", validateAnswer);
 
