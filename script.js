@@ -81,6 +81,7 @@ let counter = 60;
 let timerDisplay = document.querySelector("#timer");
 let question = document.querySelector("#startquiz");
 let questionCount = 0;
+let quizQuestion = document.querySelector("#quiz");
 let choice1 = document.querySelector("#choice1");
 let choice2 = document.querySelector("#choice2");
 let choice3 = document.querySelector("#choice3");
@@ -114,11 +115,17 @@ function startQuiz() {
     // displayQuestions(questionCount);
 }
 
-// function displayQuestions() {
-//     q = questions[questionCount];
-//     questions.textContext = q.question;
-//     choice1.textContent = q.choice1; 
-// }
+
+// Show Questions once Quiz is Started
+function displayQuestions() {
+    let currentQuestion = questions[questionCount];
+    quizQuestion.textContent = currentQuestion.question;
+    choice1.textContent = currentQuestion.choice1; 
+    choice2.textContent = currentQuestion.choice2; 
+    choice3.textContent = currentQuestion.choice3; 
+    choice4.textContent = currentQuestion.choice4; 
+
+}
 
 
 
