@@ -12,7 +12,7 @@ h1 {
     color: lightseagreen;
 }
 
-button {
+button, #choice {
     border: none;
     background-color: lightseagreen;
     border-radius: 25px;
