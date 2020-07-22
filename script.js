@@ -6,31 +6,31 @@ let questions = [
     {
         question: "Commonly used data types DO NOT include:",
         choices: ["Strings", "Booleans", "Alerts", "Numbers"],
-        correct: "3"
+        correct: "3",
     },
 
     {
         question: "The condition in an if / else statement is enclosed within ______.",
         choices: ["Quotes", "Curly Brackets", "Parentheses", "Square Brackets"],
-        correct: "3"
+        correct: "3",
     },
 
     {
         question: "Arrays in JavaScript can be used to store ______.",
         choices: ["Numbers & Strings", "Other Arrays","Booleans", "All of the above"],
-        correct: "4"
+        correct: "4",
     },
 
     {
         question: "String values must be enclosed within _______ when being assigned to variables.",
         choices: ["Commas", "Curly Brackets", "Quotes", "Parentheses"],
-        correct: "3"
+        correct: "3",
     },
 
     {
         question: "A very useful tool used during development and debugging for printing content to the debugger is:",
         choices: ["JavaScript", "Terminal / Bash", "For Loops", "Console Log"],
-        correct: "4"
+        correct: "4",
     },
 
 ];
@@ -51,10 +51,11 @@ let quizQuestion = document.querySelector("#quiz");
 // let answer = document.querySelector("#answer");
 let finalscore = document.querySelector("#finalscore");
 let currentQuestion = questions[questionCount];
-let lastQuestion = questions.length - 1;
+// let lastQuestion = questions.length - 1;
 let choicesArray = document.querySelector("#choices");
 let answer = document.querySelector("#answer");
-let endScreen = document.querySelector("#endquiz");
+let end = document.querySelector("#endquiz");
+let finalScore = document.querySelectorAll("#finalscore");
 
 
 
@@ -116,15 +117,15 @@ function displayQuestions() {
 // Validate Selected Answer
 function validateAnswer() {
     if (this.value === questions[questionCount].correct) {
-      answer.setAttribute("class", "right");
-      answer.setAttribute("style", "visibility: visible;");
-      answer.textContent = "Right!";
+    //   answer.setAttribute("class", "right");
+    //   answer.setAttribute("style", "visibility: visible;");
+    //   answer.textContent = "Right!";
       counter += 10;
   
     } else {
-      answer.setAttribute("class", "wrong");
-      answer.setAttribute("style", "visibility: visible;");
-      answer.textContent = "Wrong";
+    //   answer.setAttribute("class", "wrong");
+    //   answer.setAttribute("style", "visibility: visible;");
+    //   answer.textContent = "Wrong";
       counter -= 10;
     }
 
@@ -137,7 +138,17 @@ function validateAnswer() {
     }
   }
 
-// End Quiz ... goes here
+// End Quiz
+function endQuiz() {
+    document.querySelector("#endquiz").style.display = "block";
+    document.querySelector("#startquiz").style.display = "none";
+
+    clearInterval(timer);
+    timerDisplay.textContent = 0;
+    if (counter < 0) {
+      counter = 0;
+    }
+  }
 
 
       // Event Listeners
