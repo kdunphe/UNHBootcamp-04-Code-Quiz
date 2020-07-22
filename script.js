@@ -35,24 +35,23 @@ let questions = [
 
 ];
 
+
 // Quiz Variables
-let start = document.querySelector("#start");
-let counter = 60;
-let timerDisplay = document.querySelector("#timer");
 let questionCount = 0;
 let correct = [];
+let counter = 60;
+let start = document.querySelector("#start");
+let timerDisplay = document.querySelector("#timer");
 let quizQuestion = document.querySelector("#quiz");
 let finalscore = document.querySelector("#finalscore");
-let currentQuestion = questions[questionCount];
 let choicesArray = document.querySelector("#choices");
 let answer = document.querySelector("#answer");
 let end = document.querySelector("#endquiz");
 let finalScore = document.querySelectorAll("#finalscore");
 
 
-
-
 // Hide Intro and Show Quiz when Start Quiz is Clicked
+// Source: https://www.sitepoint.com/simple-javascript-quiz/
 function startQuiz() {
     document.querySelector("#intro").style.display = "none";
     document.querySelector("#startquiz").style.display = "block";
@@ -60,6 +59,7 @@ function startQuiz() {
 
 
 // Start Timer when Start Quiz is Clicked
+// Source: https://codepen.io/boopalan002/pen/yKZVGa
 function countDown() {
     timer = setInterval(function () {
         counter--;
@@ -76,6 +76,7 @@ function countDown() {
 
 
 // Show Questions once Quiz is Started
+// Source: https://codepen.io/boopalan002/pen/yKZVGa
 function displayQuestions() {
     let currentQuestion = questions[questionCount];
     quizQuestion.textContent = currentQuestion.question;
@@ -92,6 +93,7 @@ function displayQuestions() {
 
 
 // Validate Selected Answer
+// Source: https://stackoverflow.com/questions/40835372/targeting-multiple-choice-questions
 function validateAnswer() {
     if (this.value === questions[questionCount].correct) {
         counter += 10;
@@ -102,6 +104,7 @@ function validateAnswer() {
 
 
     // Move to Next Question or End Quiz
+    // Source: https://codepen.io/boopalan002/pen/yKZVGa
     questionCount++;
     if (questionCount === questions.length) {
         endQuiz();
