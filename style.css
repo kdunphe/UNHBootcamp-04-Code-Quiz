@@ -17,7 +17,6 @@ button, #choice {
     background-color: lightseagreen;
     border-radius: 25px;
     color: white;
-    display: inline-block;
     font-size: 22px;
     line-height: 22px;
     margin: 16px 16px 16px 20px;
@@ -43,7 +42,7 @@ main {
 }
 
 
-
+/* Media Queries */
 @media (max-width: 768px) {
     main {
       padding: 20px;
